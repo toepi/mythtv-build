@@ -42,11 +42,15 @@ RUN apt-get -y install python-mysqldb python-lxml python-urlgrabber
 # enable mythmusic
 RUN apt-get -y install libflac-dev libvorbis-dev
 
+#configure git ... for cherry-picks ....
+RUN git config --global user.email "toepi@users.noreply.github.com" && git config --global user.name "toepi"
+
 # Checkout mythtv (so run need to get latest changes only)
 RUN git clone https://github.com/MythTV/mythtv.git
 
 # Add Unicable Support to fxies/0.27
-RUN cd /mythtv && git checkout fixes/0.27 && git config --global user.email "toepi@users.noreply.github.com" && git config --global user.name "toepi" && git cherry-pick 111a7559 && git checkout master
+RUN cd /mythtv && git checkout fixes/0.27 && git cherry-pick 111a7559 && git checkout master
+
 
 ADD build.sh /build.sh
 RUN chmod +x /build.sh
