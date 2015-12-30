@@ -20,7 +20,7 @@ build() {
 
   echo "Build mythtv ${mythtv_version}"
   cd ${src_base}/mythtv \
-    && ./configure --compile-type=release \
+    && ./configure --compile-type=release --enable-libx264 --enable-libmp3lame \
     && make -s -j ${build_jobs} \
     && make install INSTALL_ROOT=${install_base}/mythtv-${mythtv_version} \
     && make install
