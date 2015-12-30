@@ -51,6 +51,9 @@ RUN git clone https://github.com/MythTV/mythtv.git
 # Add Unicable Support to fxies/0.27
 RUN cd /mythtv && git checkout fixes/0.27 && git cherry-pick 111a7559 && git checkout master
 
+# Add libcec v2 support to fixes/0.27 -> backward incompatible change :(
+ADD 0001-Add-support-for-libcec-2.patch /0001-Add-support-for-libcec-2.patch
+RUN cd /mythtv && git checkout fixes/0.27 && git cherry-pick 72e6f2d 351d203 74a76d0 && git am < /0001-Add-support-for-libcec-2.patch && git checkout master
 
 ADD build.sh /build.sh
 RUN chmod +x /build.sh
