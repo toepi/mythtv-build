@@ -42,6 +42,9 @@ RUN apt-get -y install python-mysqldb python-lxml python-urlgrabber
 # enable mythmusic
 RUN apt-get -y install libflac-dev libvorbis-dev
 
+# enable mythweather
+RUN apt-get -y install libdate-manip-perl libxml-simple-perl libxml-xpath-perl libimage-size-perl libdatetime-format-iso8601-perl libsoap-lite-perl libjson-perl
+
 #configure git ... for cherry-picks ....
 RUN git config --global user.email "toepi@users.noreply.github.com" && git config --global user.name "toepi"
 
