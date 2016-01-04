@@ -36,6 +36,8 @@ RUN apt-get -y install libva-dev
 # enable liddns_sd (Bonjour)
 RUN apt-get -y install libavahi-compat-libdnssd-dev
 
+RUN apt-get -y install libssl-dev
+
 # enable python bindings
 RUN apt-get -y install python-mysqldb python-lxml python-urlgrabber
 
