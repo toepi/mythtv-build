@@ -10,42 +10,42 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install git build-essential libtoo
   libmp3lame-dev libexiv2-dev libxinerama-dev
 
 # enable libx264
-RUN apt-get -y install libx264-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libx264-dev
 
 # enable libCEC device support
-RUN apt-get -y install libcec-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libcec-dev
 
 # enable libass subtitle support
-RUN apt-get -y install libass-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libass-dev
 
 # enable ALSA Sound support
-RUN apt-get -y install libasound2-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libasound2-dev
 
 # enable xrandr support
-RUN apt-get -y install libxrandr-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libxrandr-dev
 
 # enable xv support
-RUN apt-get -y install libxv-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libxv-dev
 
 # enable VDPAU support
-RUN apt-get -y install libvdpau-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libvdpau-dev
 
 # enable vaapi supprt
-RUN apt-get -y install libva-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libva-dev
 
 # enable liddns_sd (Bonjour)
-RUN apt-get -y install libavahi-compat-libdnssd-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libavahi-compat-libdnssd-dev
 
-RUN apt-get -y install libssl-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libssl-dev
 
 # enable python bindings
-RUN apt-get -y install python-mysqldb python-lxml python-urlgrabber
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install python-mysqldb python-lxml python-urlgrabber
 
 # enable mythmusic
-RUN apt-get -y install libflac-dev libvorbis-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libflac-dev libvorbis-dev
 
 # enable mythweather
-RUN apt-get -y install libdate-manip-perl libxml-simple-perl libxml-xpath-perl libimage-size-perl libdatetime-format-iso8601-perl libsoap-lite-perl libjson-perl
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libdate-manip-perl libxml-simple-perl libxml-xpath-perl libimage-size-perl libdatetime-format-iso8601-perl libsoap-lite-perl libjson-perl
 
 #configure git ... for cherry-picks ....
 RUN git config --global user.email "toepi@users.noreply.github.com" && git config --global user.name "toepi"
