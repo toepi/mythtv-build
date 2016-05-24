@@ -9,6 +9,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install git build-essential libtoo
   qt4-qmake libqt4-opengl-dev yasm uuid-dev libtag1-dev libfreetype6-dev \
   libmp3lame-dev libexiv2-dev libxinerama-dev
 
+# dependencies for 0.28
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install qt5-default qtscript5-dev libqt5webkit5-dev
+
 # enable libx264
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libx264-dev
 
