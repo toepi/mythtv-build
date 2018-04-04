@@ -2,12 +2,14 @@ FROM debian:jessie
 
 Maintainer toepi <toepi@users.noreply.github.com>
 
+# configure apt
+ADD sources.list /etc/apt/sources.list
 # update image ....
 RUN apt-get update && apt-get -y dist-upgrade
 # install default build dependencies
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install git build-essential libtool-bin automake \
   qt4-qmake libqt4-opengl-dev yasm uuid-dev libtag1-dev libfreetype6-dev \
-  libmp3lame-dev libexiv2-dev libxinerama-dev
+  libmp3lame-dev libexiv2-dev libxinerama-dev libudev-dev
 
 # dependencies for 0.28
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install qt5-default qtscript5-dev libqt5webkit5-dev
@@ -34,7 +36,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libxv-dev
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libvdpau-dev
 
 # enable vaapi supprt
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libva-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install -t jessie-backports libva-dev
 
 # enable liddns_sd (Bonjour)
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install libavahi-compat-libdnssd-dev
